@@ -79,7 +79,7 @@ function setupStream(db) {
       if (tweet.coordinates != null) {
         replyWithNuggLoc(db, tweet)
       } else {
-        const reply_text = `@${tweet.user.screen_name} 123Please tweet from your mobile with your precise location toggled on for that tweet (help: https://support.twitter.com/articles/122236)`
+        const reply_text = `@${tweet.user.screen_name} Please tweet from your mobile with your precise location toggled on for that tweet (help: https://support.twitter.com/articles/122236)`
         T.post("statuses/update", { status: reply_text, in_reply_to_status_id: tweet.id_str })
           .then(function(result) {
             console.log("Reply sent with text: " + reply_text)
